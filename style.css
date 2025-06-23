@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  background: #87ceeb;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ocean-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ffdf00;
+}
+
+/* Waves */
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  background: #1e90ff;
+  border-radius: 43%;
+  opacity: 0.8;
+  animation: waveMotion 10s linear infinite;
+}
+
+.wave1 {
+  bottom: 0;
+  left: -50%;
+  z-index: 1;
+}
+
+.wave2 {
+  bottom: 10px;
+  left: -60%;
+  opacity: 0.5;
+  animation-delay: 5s;
+}
+
+@keyframes waveMotion {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/* Dolphin */
+.dolphin {
+  position: absolute;
+  bottom: 120px;
+  left: 20%;
+  width: 60px;
+  height: 60px;
+  background: #4a90e2;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  animation: dolphinJump 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes dolphinJump {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(-100px) rotate(-45deg); }
+}
+
+/* Whale */
+.whale {
+  position: absolute;
+  bottom: 60px;
+  left: 60%;
+  width: 100px;
+  height: 60px;
+  background: #5f9ea0;
+  border-radius: 50px 50px 30px 30px;
+  z-index: 1;
+  animation: whaleFloat 6s ease-in-out infinite;
+}
+
+@keyframes whaleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Blow water */
+.blow {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 6px;
+  height: 30px;
+  background: #aef;
+  border-radius: 50%;
+  animation: blowWater 1s ease-in-out infinite;
+}
+
+@keyframes blowWater {
+  0% { height: 10px; opacity: 0; }
+  50% { height: 30px; opacity: 1; }
+  100% { height: 10px; opacity: 0; }
+}
+
+/* Fish */
+.fish {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: orange;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(30deg);
+  z-index: 2;
+}
+
+.fish1 {
+  bottom: 40px;
+  left: -50px;
+  animation: fishSwim 10s linear infinite;
+}
+
+.fish2 {
+  bottom: 80px;
+  left: -100px;
+  width: 20px;
+  height: 15px;
+  background: yellow;
+  animation: fishSwim 12s linear infinite;
+}
+
+@keyframes fishSwim {
+  0% { transform: translateX(0) rotate(30deg); }
+  100% { transform: translateX(120vw) rotate(30deg); }
+}
